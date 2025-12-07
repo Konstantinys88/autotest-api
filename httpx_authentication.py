@@ -22,3 +22,4 @@ refresh_response = httpx.post('http://localhost:8000/api/v1/authentication/refre
 refresh_response_data = refresh_response.json()
 
 print(f'Status: {refresh_response.status_code}, Login response: {refresh_response_data}')
+
