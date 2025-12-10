@@ -47,9 +47,9 @@ delete_respons_data = response.json()
 print(f'Status: {response.status_code}, Response: {delete_respons_data}')
 
 # Получение пользователя
-# user_headers = {"Authorization": f"Bearer {login_response_data['token']['accessToken']}"}
-# user_id = user_payload_dara['user']['id']
-# # print(user_id)
-# response = httpx.get(f'http://localhost:8000/api/v1/users/{user_id}', headers=user_headers)
-# user_id_data = response.json()
-# print(f'Status: {response.status_code}, Response: {user_id_data}')
+user_headers = {"Authorization": f"Bearer {login_response_data['token']['accessToken']}"}
+user_id = user_payload_dara['user']['id']
+# print(user_id)
+response = httpx.get(f'http://localhost:8000/api/v1/users/{user_id}', headers=user_headers)
+user_id_data = response.json()
+print(f'Status: {response.status_code}, Response: {user_id_data}')
