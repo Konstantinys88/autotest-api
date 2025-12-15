@@ -1,6 +1,7 @@
 from typing import TypedDict
 from httpx import Response
 from clients.api_client import APIClient
+from private_http_builder import AuthentificationUserDict, get_private_http_client
 
 class DataFilesDict(TypedDict):
     filename: str
@@ -23,3 +24,6 @@ class FilesClient(APIClient):
             data=request, 
             files={'upload_file': open(request['upload_file'], 'rb')}
             )
+        
+def get_files_client(user: AuthentificationUserDict) -> FilesClient:
+    return FilesClient(client=get_private_http_client(user))
