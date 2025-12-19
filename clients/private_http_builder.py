@@ -2,11 +2,11 @@ from httpx import Client
 from authentication.authentication_client import get_authentification_client, LoginRequestDict
 from typing import TypedDict
 
-class AuthentificationUserDict(TypedDict):
+class AuthenticationUserDict(TypedDict):
     email: str
     password: str
 
-def get_private_http_client(user: AuthentificationUserDict) -> Client:
+def get_private_http_client(user: AuthenticationUserDict) -> Client:
     authentification_client = get_authentification_client()
     login_request = LoginRequestDict(email=user['email'],password=user['password'])
     login_response = authentification_client.login(login_request)
