@@ -21,6 +21,7 @@ authentication_user = AuthenticationUserDict(
     email=create_user_request['email'],
     password=create_user_request['password']
 )
+
 files_client = get_files_client(authentication_user)
 courses_client = get_courses_client(authentication_user)
 
